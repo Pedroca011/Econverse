@@ -1,0 +1,28 @@
+@import './variables'
+  
+@mixin flex-center($direction: row, $justify: center, $align: center) 
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify // Permite customizar justify-content
+  align-items: $align // Permite customizar align-items
+
+@mixin button-style($bg-color: $pink-primary, $color: $btn-text)
+  padding: 14px 85px
+  background-color: $bg-color
+  color: $color
+  border: none
+  border-radius: $border-radius
+  cursor: pointer
+  transition: background-color 0.3s
+  font-size: 14px
+  font-weight: bold
+
+  &:hover
+    background-color: darken($bg-color, 10%)
+
+@mixin button-reset($padding: 12px 75px, $bg-color: transparent, $font-size: 16px)
+  background-color: $bg-color
+  padding: $padding
+  border: none
+  font-size: $font-size
+  cursor: pointer

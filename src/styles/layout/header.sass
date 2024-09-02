@@ -1,0 +1,28 @@
+@import '../utils/variables'
+@import '../utils/mixins'
+@import '../utils/media-queries'
+
+header 
+    @include flex-center
+    color: $pink-primary
+    h1
+        padding: 15px
+        font-size: 30px
+        text-align: center
+        width: 30%
+    hr
+        width: 30rem
+        border: none
+        border-top: 1px solid $line-through
+
+
+div
+    @include flex-center(column, center, center )
+    margin: 15px 86px
+
+@include respond-to('mobile') 
+    div
+        margin: 15px 30px
+    header
+        h1
+            font-size: 20px

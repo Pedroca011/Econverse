@@ -1,0 +1,45 @@
+// Importações
+@import '../utils/variables'
+@import '../utils/mixins'
+@import '../utils/media-queries'
+
+// Navegação
+nav 
+  @include flex-center // Centraliza o conteúdo
+  width: 100% // Garante que o nav ocupe a largura total
+
+  ul 
+    @include flex-center // Centraliza o conteúdo da lista
+    // Remove o estilo padrão da lista
+    padding: 0 // Remove padding padrão
+    margin: 0 // Remove margin padrão
+
+    li 
+      list-style-type: none // Remove marcadores de lista
+      color: $gray-primary
+      border: 1px solid $line-through
+
+      button 
+        @include button-reset(12px 75px, transparent, 16px) // Estilização do botão
+
+        &:focus 
+          color: $pink-primary // Cor do texto ao focar
+          font-weight: bold // Negrito ao focar
+
+// Responsividade
+@include respond-to('tablet') 
+ nav 
+    ul 
+      li 
+        button 
+          @include button-reset(12px 20px, transparent, 16px) // Estilização do botão
+        
+                    
+        
+@include respond-to('mobile') 
+ nav 
+    ul 
+      li 
+        button 
+          @include button-reset(12px 5px, transparent, 12px) // Estilização do botão
+      
